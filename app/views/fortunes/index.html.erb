@@ -1,0 +1,100 @@
+<style>
+    body {
+        background:white;
+        font-family: Tahoma;
+        font-size:14px;
+    }
+
+    table
+    {
+        table-layout:auto;
+        border-collapse:collapse;
+        background-color:#D0D0D0;
+    }
+    tr:nth-child(odd) { background-color:white; }
+    tr:nth-child(even) { background-color:#CCFFCC; }
+
+</style>
+<div class="navbar navbar-fixed-top">
+
+  <div class="navbar-inner">
+    <div class="container">
+      <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </a>
+
+
+      <div class="nav-collapse">
+        <ul class="nav">
+          <li class="active">
+            <a href="./index.html">Overview</a>
+          </li>
+          <li class="">
+            <a href="./scaffolding.html">Scaffolding</a>
+          </li>
+
+          <li class="">
+            <a href="./base-css.html">Base CSS</a>
+          </li>
+          <li class="">
+            <a href="./components.html">Components</a>
+          </li>
+          <li class="">
+            <a href="./javascript.html">Javascript plugins</a>
+
+          </li>
+          <li class="">
+            <a href="./less.html">Using LESS</a>
+          </li>
+          <li class="divider-vertical"></li>
+          <li class="">
+            <a href="./download.html">Customize</a>
+          </li>
+
+          <li class="">
+            <a href="./examples.html">Examples</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<br>
+<br>
+<br>
+<h1 align="center">Listing fortunes</h1>
+
+<div class="inner">
+  <table> <div class="table-bordered" align="center">
+    <tr>
+      <th></th>
+      <th>Quotation</th>
+      <th>Source</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+
+    <% @fortunes.each do |fortune| %>
+        <tr>
+          <td width="100" ></td>
+          <td width="400" height="40"><%= fortune.quotation %></td>
+          <td width="300" align="center"><%= fortune.source %></td>
+          <td width="80"><div class="btn" > <%= link_to 'Show', fortune %></div></td>
+          <td width="80"><div class="btn"><%= link_to 'Edit', edit_fortune_path(fortune) %></div></td>
+          <td width="80"><div class="btn"><%= link_to 'Destroy', fortune, confirm: 'Are you sure?', method: :delete %></div></td>
+
+
+        </tr>
+    <% end %>
+  </div>
+  </table>
+</div>
+</div>
+<br />
+</div>
+
+<div class="btn"> <%= link_to 'New Fortune', new_fortune_path %>     </div>
